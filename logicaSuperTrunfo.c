@@ -1,66 +1,135 @@
 #include <stdio.h>
 
-int main (){
-    char Estado1 = 'A';
-    char Codigo1[5] = "A01";
-    char Cidade1[10] = "Bahia";
-    int Populacao1 = 14140000;
-    float Area1 = 564.760; // km²
-    double PIB1 = 34900000000.0; // bilhões de reais
-    int PontosTuristicos1 = 13;
-    float Densidadepopulacional1 = Populacao1 / Area1; // hab/km²
-    double PIBpercapita1 = PIB1 / Populacao1; // reais
-    float SuperPoder1 = Populacao1 + Area1 + PIB1 + PontosTuristicos1 + (1 / 25037.18) + 2468.18;
+int main() {
+char Cidade1[10] = "Bahia";
+int Populacao1 = 14140000;
+float Area1 = 564.760;
+double PIB1 = 34900000000.0;
+int PontosTuristicos1 = 13;
+float Densidadepopulacional1 = Populacao1 / Area1;
 
-    printf("Carta 1:\n");
-    printf("Estado: %c\n", Estado1);
-    printf("Código: %s\n", Codigo1);
-    printf("Cidade: %s\n", Cidade1);
-    printf("População: %d\n", Populacao1);
-    printf("Área: %.2f km²\n", Area1);
-    printf("PIB: %.2f bilhões de reais\n", PIB1 / 100000000.0);
-    printf("Pontos Turísticos: %d\n", PontosTuristicos1);
-    printf("Densidade Populacional: %.2f hab/km²\n", Densidadepopulacional1);
-    printf("PIB per capita: %.2f reais\n", PIBpercapita1);
-    printf("Super Poder: %.2lf\n\n", SuperPoder1);
+char Cidade2[10] = "Paraná";
+int Populacao2 = 11440000;
+float Area2 = 199.315;
+double PIB2 = 66565000000.0;
+int PontosTuristicos2 = 18;
+float Densidadepopulacional2 = Populacao2 / Area2;
 
+int opcao, atributo;
 
-    char Estado2 = 'B';
-    char Codigo2[5] = "B02";
-    char Cidade2[10] = "Paraná";
-    int Populacao2 = 11440000;
-    float Area2 = 199.315; // km²
-    double PIB2 = 66565000000.0; // bilhões de reais
-    int PontosTuristicos2 = 18;
-    float Densidadepopulacional2 = Populacao2 / Area2; // hab/km²
-    double PIBpercapita2 = PIB2 / Populacao2; // reais
-    float SuperPoder2 = Populacao2 + Area2 + PIB2 + PontosTuristicos2 + (1 / 57396.58) + 5818.62;
+printf("Menu Principal\n");
+printf("1. Iniciar Jogo\n");
+printf("2. Tutorial\n");
+printf("3. Regras\n");
+printf("4. Fechar jogo\n");
+printf("Escolha uma opção: ");
+scanf("%d", &opcao);
 
+switch (opcao) {
+case 1:
+    printf("Escolha o atributo para comparar:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de pontos turísticos\n");
+    printf("5. Densidade demográfica\n");
+    scanf("%d", &atributo);
 
-    printf("Carta 2:\n");
-    printf("Estado: %c\n", Estado2);
-    printf("Código: %s\n", Codigo2);
-    printf("Cidade: %s\n", Cidade2);
-    printf("População: %d\n", Populacao2);
-    printf("Área: %.2f km²\n", Area2);
-    printf("PIB: %.2f bilhões de reais\n", PIB2 / 100000000.0);
-    printf("Pontos Turísticos: %d\n", PontosTuristicos2);
-    printf("Densidade Populacional: %.2f hab/km²\n", Densidadepopulacional2);
-    printf("PIB per capita: %.2f reais\n", PIBpercapita2);
-    printf("Super Poder: %.2lf\n\n", SuperPoder2);
+    printf("=== Resultado da Comparação ===\n");
+    printf("Carta 1: %s\n", Cidade1);
+    printf("Carta 2: %s\n", Cidade2);
 
-     // Comparação de Cartas (Atributo: População:)
-     printf("Comparação de Cartas (Atributo: População)\n");
-     printf("Carta 1 - Bahia (BA): 14.140.000\n");
-     printf("Carta 2 - Paraná (PR): 11.440.000\n");
+    switch (atributo) {
+    case 1:
+        printf("Atributo: População\n");
+        printf("Bahia: %d\n", Populacao1);
+        printf("Paraná: %d\n", Populacao2);
+        if (Populacao1 > Populacao2) 
+        printf("Bahia venceu!\n");
+        else if (Populacao1 < Populacao2) 
+        printf("Paraná venceu!\n");
+        else 
+        printf("Empate!\n");
+        break;
+    case 2:
+        printf("Atributo: Área\n");
+        printf("Bahia: %.2f km²\n", Area1);
+        printf("Paraná: %.2f km²\n", Area2);
+        if (Area1 > Area2) 
+        printf("Bahia venceu!\n");
+        else if (Area1 < Area2) 
+        printf("Paraná venceu!\n");
+        else 
+        printf("Empate!\n");
+        break;
+    case 3:
+        printf("Atributo: PIB\n");
+        printf("Bahia: %.2f bilhões de reais\n", PIB1 / 1000000000);
+        printf("Paraná: %.2f bilhões de reais\n", PIB2 / 1000000000);
+        if (PIB1 > PIB2) 
+        printf("Bahia venceu!\n");
+        else if (PIB1 < PIB2) 
+        printf("Paraná venceu!\n");
+        else 
+        printf("Empate!\n");
+        break;
+    case 4:
+        printf("Atributo: Número de pontos turísticos\n");
+        printf("Bahia: %d\n", PontosTuristicos1);
+        printf("Paraná: %d\n", PontosTuristicos2);
+        if (PontosTuristicos1 > PontosTuristicos2) 
+        printf("Bahia venceu!\n");
+        else if (PontosTuristicos1 < PontosTuristicos2) 
+        printf("Paraná venceu!\n");
+        else 
+        printf("Empate!\n");
+        break;
+    case 5:
+        printf("Atributo: Densidade demográfica\n");
+        printf("Bahia: %.2f hab/km²\n", Densidadepopulacional1);
+        printf("Paraná: %.2f hab/km²\n", Densidadepopulacional2);
+        if (Densidadepopulacional1 < Densidadepopulacional2) 
+        printf("Bahia venceu!\n");
+        else if (Densidadepopulacional1 > Densidadepopulacional2) 
+        printf("Paraná venceu!\n");
+        else 
+        printf("Empate!\n");
+        break;
+    default:
+        printf("Atributo inválido!\n");
+        break;
+    }
+    break;
 
-   if(Populacao1 > Populacao2) {
-      printf("Carta 1 (Bahia) venceu!");
-   } else {
-      printf("Carta 2 (Paraná) venceu!");
-   }
+case 2:
+    printf("Tutorial:\n");
+    printf("Exemplo de comparação de atributo:\n");
+    printf("Comparação de População:\n");
+    printf("Carta 1 - Bahia (BA): %d\n", Populacao1);
+    printf("Carta 2 - Paraná (PR): %d\n", Populacao2);
+    if (Populacao1 > Populacao2) 
+    printf("Bahia venceu!\n");
+    else if (Populacao1 < Populacao2) 
+    printf("Paraná venceu!\n");
+    else 
+    printf("Empate!\n");
+    break;
 
-   
-  return 0;
+case 3:
+    printf("Regras:\n");
+    printf("- O jogador escolhe um atributo para comparar.\n");
+    printf("- A carta com o maior valor vence.\n");
+    printf("- Para densidade demográfica, vence a carta com o menor valor.\n");
+    break;
 
+case 4:
+    printf("Fechando jogo...\n");
+    break;
+
+default:
+    printf("Opção inválida!\n");
+    break;
+}
+
+return 0;
 }
