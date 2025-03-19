@@ -132,23 +132,23 @@ int main() {
             somaComputador = valorComputador1 + valorComputador2;
 
             // Exibição dos resultados
-            printf("\nResultado da Comparação:\n");
+            printf("Resultado da Comparação:\n");
             printf("Carta do Jogador: %s\n", Cidade1);
             printf("%s: %.2f\n", atributo1, valorJogador1);
             printf("%s: %.2f\n", atributo2, valorJogador2);
             printf("Soma dos atributos: %.2f\n", somaJogador);
 
-            printf("\nCarta do Computador: %s\n", Cidade2);
+            printf("Carta do Computador: %s\n", Cidade2);
             printf("%s: %.2f\n", atributo1, valorComputador1);
             printf("%s: %.2f\n", atributo2, valorComputador2);
             printf("Soma dos atributos: %.2f\n", somaComputador);
 
             if (somaJogador > somaComputador) {
-                printf("\nParabéns, você venceu!\n");
+                printf("Parabéns, você venceu!\n");
             } else if (somaJogador < somaComputador) {
-                printf("\nInfelizmente, você perdeu!\n");
+                printf("Infelizmente, você perdeu!\n");
             } else {
-                printf("\nEmpate!\n");
+                printf("Empate!\n");
             }
             break;
 
